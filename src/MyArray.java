@@ -10,18 +10,18 @@ public class MyArray {
             System.out.println("Exception");
         }
         int count = 0;
-        for (String[] strings : matrix) {
+        for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 try {
-                    if (strings[j] == null) {
+                    if (matrix[i][j] == null) {
                         count = count + 1;
                         throw new MyArrayDataException();
                     } else {
-                        Integer number = Integer.valueOf(strings[j]);
+                        Integer number = Integer.valueOf(matrix[i][j]);
                         System.out.println(number);
                     }
                 } catch (MyArrayDataException myArrayDataException) {
-                    System.out.println("Пусто");
+                    System.out.println("Пусто в ячейке №" + i + "." + j);
                 }
 
             }
